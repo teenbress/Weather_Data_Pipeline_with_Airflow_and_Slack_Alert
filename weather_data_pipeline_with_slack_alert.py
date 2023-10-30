@@ -18,6 +18,7 @@ default_args = {
     'email_on_retry': False,
     'retries': 2,
     'retry_delay': timedelta(minutes=2)
+    #'on_failture_callback':slack_fail_alert
 }
 
 
