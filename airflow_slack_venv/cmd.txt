@@ -1,0 +1,19 @@
+**************** aws ec2 configure cmd ****************
+sudo apt update
+sudo apt install python3-pip
+sudo apt install python3.10-venv
+python3 -m venv airflow_slack_venv
+source airflow_slack_venv/bin/active
+pip install pandas
+pip install apache-airflow
+pip install apache-airflow-providers-slack
+
+airflow standalone
+sudo apt  install awscli
+aws configure
+aws sts get-session-token
+
+
+#extract_transform_weather_data >> load_to_s3 >> slack_notification
+
+        
