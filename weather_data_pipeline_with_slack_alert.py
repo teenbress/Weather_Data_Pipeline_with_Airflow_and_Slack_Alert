@@ -104,6 +104,29 @@ with DAG('weather_dag',
             )      
 
 
+##### The Other Version of Slack Alerts #####
+
+#slack_fail_alert(context):
+
+#    slack_msg = f"""
+#        :x: Task Failed.
+#        *Task*: {context.get('task_instance').task_id}
+#        *Dag*: {context.get('task_instance').dag_id}
+#        *Execution Time*: {context.get('execution_date')}
+#        <{context.get('task_instance').log_url}|*Logs*>
+#    """
+
+#    slack_alert = SlackWebhookOperator(
+#        task_id='slack_fail',
+#        slack_webhook_conn_id="slack_conn_id",
+#        message=slack_msg,
+#        channel="#project-weather-data",
+#    )
+
+#    return slack_alert.execute(context=context)
+        
+        
+
 
         
         
